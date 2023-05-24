@@ -1,0 +1,6 @@
+work
+clean
+drink coffee
+sleep
+eat
+dance 
