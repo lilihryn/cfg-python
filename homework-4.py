@@ -57,25 +57,27 @@ sets of numbers, the program should output a prize based on the number of matche
 
 lottery_ticket = []
 ticket_length = 7
-for idx in range(ticket_length):
-    lucky_numbers = int(input("Provide number"))
+for nmb in range(ticket_length):
+    lucky_numbers = int(input("Provide number from"))
     lottery_ticket.append(lucky_numbers)
 print(lottery_ticket)
 winning_ticket = []
-for idx in range(ticket_length):
-    num = random.randint(1, 7)
-    winning_ticket.append(num)
+for nmb in range(ticket_length):
+    nmb = random.randint(1, 7)
+    winning_ticket.append(nmb)
 print(winning_ticket)
-lottery_matches = list(set(lottery_ticket) & set(winning_ticket))
-if lottery_matches == 3:
-    print("You won £20")
-elif lottery_matches == 4:
-    print("You won £40")
-elif lottery_matches == 5:
-    print("You won £100")
-elif lottery_matches == 6:
-    print("You won £10000")
-elif lottery_matches == 7:
-    print("You won £1000000")
+matches = set(lottery_ticket).intersection(set(winning_ticket))
+
+if len(matches) == 3:
+    print(" £20 for{}matches".format(matches))
+elif len(matches) == 4:
+    print(" £40 for{}matches".format(matches))
+elif len(matches) == 5:
+    print(" £100 for{}matches".format(matches))
+elif len(matches) == 6:
+    print(" £10000 for{}matches".format(matches))
+elif len(matches) == 7:
+    print(" £100000 for{}matches".format(matches))
 else:
-    print("Try again")
+    print("Maybe next time")
+
